@@ -8,7 +8,7 @@ public class TerrainCreator : MonoBehaviour
     [SerializeField] int scale = 1000;
     public SpriteShapeController shape;
     public int nrOfPoints = 150;
-    
+
     void Start()
     {
         shape = GetComponent<SpriteShapeController>();
@@ -23,17 +23,11 @@ public class TerrainCreator : MonoBehaviour
             shape.spline.InsertPointAt(i + 2, new Vector3(xPos, 10 * Mathf.PerlinNoise(i * Random.Range(5f, 15f), 0)));
         }
 
-        for(int i = 2; i< 152; i++)
+        for (int i = 2; i < 152; i++)
         {
             shape.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
             shape.spline.SetLeftTangent(i, new Vector3(-1, 0, 0));
             shape.spline.SetRightTangent(i, new Vector3(1, 0, 0));
         }
-    }
-
-    
-    void Update()
-    {
-        
     }
 }
