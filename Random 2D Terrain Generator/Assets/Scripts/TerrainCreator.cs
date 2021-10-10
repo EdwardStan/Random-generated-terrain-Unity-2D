@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class TerrainCreator : MonoBehaviour
 {
     [SerializeField] int scale = 1000;
-    public SpriteShapeController shape;
-    public int nrOfPoints = 150;
+    [SerializeField] public SpriteShapeController shape;
+    [SerializeField] public int nrOfPoints = 150;
+    [SerializeField] InputField Lenght;
+    [SerializeField] InputField Points;
 
-    void Start()
+    public GameObject Button;
+    public GameObject InputS;
+    public GameObject InputP;
+    public GameObject Rack;
+
+    public void GenerateTerrain()
     {
+        scale = int.Parse(Lenght.text);
+        nrOfPoints = int.Parse(Points.text);
+
         shape = GetComponent<SpriteShapeController>();
         float distanceBetweenPoints = scale / nrOfPoints;
         shape.spline.SetPosition(2, shape.spline.GetPosition(2) + Vector3.right * scale);
@@ -29,5 +40,10 @@ public class TerrainCreator : MonoBehaviour
             shape.spline.SetLeftTangent(i, new Vector3(-1, 0, 0));
             shape.spline.SetRightTangent(i, new Vector3(1, 0, 0));
         }
+
+        Button.SetActive(false);
+        InputS.SetActive(false);
+        InputP.SetActive(false);
+        Rack.SetActive(false);
     }
 }
