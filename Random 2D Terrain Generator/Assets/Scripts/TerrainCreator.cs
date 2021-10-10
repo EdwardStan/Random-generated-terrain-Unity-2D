@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class TerrainCreator : MonoBehaviour
 {
-    [SerializeField] int scale = 1000;
+    [SerializeField] int scale;
     [SerializeField] public SpriteShapeController shape;
-    [SerializeField] public int nrOfPoints = 150;
+    [SerializeField] public int nrOfPoints;
     [SerializeField] InputField Lenght;
     [SerializeField] InputField Points;
 
