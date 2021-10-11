@@ -9,5 +9,3 @@ The script works like this:
 2. You set the number of poitns that are responsilbe for the creation of the hills.
 3. The script will divide the lenght to the points.
 4. The results will represent the distance between the points. More points mean more hills with steeper structure, while less points meaning there will be less hills with smootlier surfaces.
-
-Check the link in the attachement for a visual representation.
